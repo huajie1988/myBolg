@@ -1,0 +1,103 @@
+﻿
+        .mybtn_up{
+			/*
+
+            position: absolute;
+
+            clip: rect(23px 138px  43px 118px);
+
+            z-index: 9999;
+
+            left: -50px;
+
+            top: -11px;
+
+            opacity: 0.7;
+*/
+        }
+
+        .mybtn_down{
+/*
+            position: absolute;
+
+            clip: rect(23px 161px  43px 141px);
+
+            z-index: 9999;
+
+            left: -74px;
+
+            top: -11px;
+*/
+        }
+
+        .myulbg{
+
+            background-color: #ff00ff;
+
+        }
+
+        .mymainbg{
+
+		background-image: url("../img/cmdms.jpg");
+
+		height: 120px;  /* start height 如果去掉，则会随着响应导航栏变化而变化 */
+
+		background-size: cover;
+
+		/*background-position: center;   保证Internet Explorer 7/8 正常显示，图片会居中*/
+
+		}
+
+.myasideimg{
+
+width:100%;
+
+}
+
+.myasidetitlebg{
+
+width:100%;
+
+background-color:#fff;
+color: #777777;
+text-shadow: 0 1px 0 #ffffff;
+
+height:100%;
+
+border-width:0px 1px 1px 1px;
+
+border-style:solid;
+
+border-color:#D6E1E4/*rgba(230, 230, 230, 0.45)*/;
+
+background-image: -moz-linear-gradient(top, #FFF, #EEE); /* Firefox */
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFF), color-stop(1, #EEE)); /* Saf4+, Chrome */
+background-image: -ms-linear-gradient(top, #FFF, #EEE); /* IE*/
+
+}
+.myasidetitlebg_rev{
+background-image: -moz-linear-gradient(top, #000, #000); /* Firefox */
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000), color-stop(1, #000)); /* Saf4+, Chrome */
+background-image: -ms-linear-gradient(top, #000, #000); /* IE*/
+color: #999999;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+border-color:rgba(230, 230, 230, 0.25);
+
+}
+	.myStrong{
+		cursor:pointer;
+}
+    .mycontainerbg{
+        background-color: #fff;
+        opacity:0.8;
+    }
+
+    .myasidecontainer{
+        display: none;
+        width: 100%;
+        word-break:break-all;
+        /*overflow: auto;
+        height: 50px;
+        scrollbar-arrow-color:#FFFFFF;*/
+    }
+
