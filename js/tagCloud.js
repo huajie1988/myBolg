@@ -1,6 +1,6 @@
 			function tagCloud(){
 					$.getJSON(
-						'tags.php',
+						'./ajax/tags.php',
 						{},
 						createTagCloud
 					);

@@ -1,6 +1,6 @@
 <?php
-include_once './config.php';
-include_once './mysqlConnect.php';
+include_once '../config/config.php';
+include_once '../lib/mysqlConnect.php';
 $mysqli=new mysqliMe($host,$user,$password,$dataBase);
 $query='SELECT cityName,cityRating FROM cloudtest';
 $arr=array();

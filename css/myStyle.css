@@ -68,7 +68,7 @@ border-width:0px 1px 1px 1px;
 
 border-style:solid;
 
-border-color:#D6E1E4/*rgba(230, 230, 230, 0.45)*/;
+border-color:#D6E1E4;/*rgba(230, 230, 230, 0.45)*/
 
 background-image: -moz-linear-gradient(top, #FFF, #EEE); /* Firefox */
 background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFF), color-stop(1, #EEE)); /* Saf4+, Chrome */
@@ -87,9 +87,19 @@ border-color:rgba(230, 230, 230, 0.25);
 	.myStrong{
 		cursor:pointer;
 }
+    .mycontainerbgtitle{
+    background:rgba(255, 255, 255, 0.8);
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#4c000000', EndColorStr='#4c000000');
+    }
     .mycontainerbg{
-        background-color: #fff;
-        opacity:0.8;
+    background:rgba(102, 102, 102, 0.3);
+    height: 100%;
+    /*filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#4c000000', EndColorStr='#4c000000');*/
+    }
+    
+    .mycontainerbg img{
+        /*width: 60px;*/
+        height: 60px;
     }
 
     .myasidecontainer{
@@ -100,4 +110,9 @@ border-color:rgba(230, 230, 230, 0.25);
         height: 50px;
         scrollbar-arrow-color:#FFFFFF;*/
     }
+
+    #sortable { list-style-type: none; margin: 0;}
+    #sortable li { margin: 13px 13px 0px 0; float: left;text-align: center; }
+    #sortable2 { list-style-type: none; margin: 0;}
+    #sortable2 li { margin: 13px 13px 0px 0; float: left;text-align: center; }
 

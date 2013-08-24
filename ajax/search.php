@@ -1,6 +1,6 @@
 <?php
-include_once './config.php';
-include_once './mysqlConnect.php';
+include_once '../config/config.php';
+include_once '../lib/mysqlConnect.php';
 $tmp=$_GET['key'];
 $table=$_GET['table'];
 $db=new mysqliMe($host,$user,$password,$dataBase);

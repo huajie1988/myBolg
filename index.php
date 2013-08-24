@@ -30,11 +30,18 @@
  
     <link rel="stylesheet" type="text/css" href="./css/myStyle.css"> 
  
+	<!-- <link href="./css/jquery.gridly.css" rel="stylesheet" type="text/css" /> -->
+
     <script type="text/javascript" src="./js/jquery.js"></script>
- 
+ 	<script src="./js/jquery.ui.core.js"></script>
+	<script src="./js/jquery.ui.widget.js"></script>
+	<script src="./js/jquery.ui.mouse.js"></script>
+	<script src="./js/jquery.ui.sortable.js"></script>
     <script type="text/javascript" src="./js/myjs.js"></script>  
  	<script type="text/javascript" src="./js/tagCloud.js"></script>  
     <script type="text/javascript" src="./js/bootstrap.js"></script>
+
+
 </head>
  
  
@@ -218,7 +225,7 @@
 				<div class="myasidetitlebg"><strong class="myStrong">&nbsp;MyMicroBlog</strong></div><div class="myasidecontainer" style="height:190px;">
 						<?php
 						//	echo "aside1";
-							include("./weibo_Class_inc.php");
+							include("./classes/weibo_Class_inc.php");
 							$arr=array('skin'=>10,'width'=>'','fansRow'=>0,'height'=>200/*'uid'=>1401880315,'verifier'=>'f47cc89f'*/);
 							$wb=new weibo($arr);
 							$wb->display();
@@ -236,27 +243,85 @@
  
  
  
-			<div class="span8 mycontainerbg" id="container">container
+		<div class="span8 mycontainerbgtitle" >containerTitle
 		<!--	<script>
             $(document).ready(function () {
                $("#date").text((new Date()).toString());
             });
             
         </script>-->
- </div>
- 
- 
- 
-        </div>
+
+ 		</div>
+        <div class="span8  hero-unit mycontainerbg" id="mycontainer">
+		  <h1>Heading</h1>
+		  <p id="container">Tagline</p>
+		  <p>
+		    <a class="btn btn-primary btn-large">
+		      Learn more
+		    </a>
+		  </p>
+		  
+		  	<ul id="sortable">
+		  	<li><img src="./img/ico_day/chrome.png"/></li>
+		  	<li><img src="./img/ico_day/gmail_has.png"/></li>
+		  	<li><img src="./img/ico_day/calendar.png"/></li>
+		  	<li><img src="./img/ico_day/evernote_gw.png"/></li>
+		  	<li><img src="./img/ico_day/music.png"/></li>
+		  	<li><img src="./img/ico_day/rss.png"/></li>
+		  	<li><img src="./img/ico_day/SMS.png"/></li>
+		  	<li><img src="./img/ico_day/Weather.png"/></li>
+		  	<li><img src="./img/ico_day/github.png"/></li>
+		  	<li><img src="./img/ico_day/Messageboards.png"/></li>
+		  	<li><img src="./img/ico_day/twitter_bwb.png"/></li>
+		  	<li><img src="./img/ico_day/cnbeta.png"/></li>
+		  	<li><img src="./img/ico_day/GMap.png"/></li>
+		  	<li><img src="./img/ico_day/Gplus.png"/></li>
+		  	<li><img src="./img/ico_day/youtube.png"/></li>
+		  	<li><img src="./img/ico_day/csdn.jpg"/></li>
+		  	<li><img src="./img/ico_day/skype.png"/></li>
+		  	<li><img src="./img/ico_day/summer.logo.png"/></li>
+		  </ul>
+		   <ul id="sortable2">
+		  	<li><img src="./img/ico_night/chrome.png"/></li>
+		  	<li><img src="./img/ico_night/gmail_has.png"/></li>
+		  	<li><img src="./img/ico_night/calendar.png"/></li>
+		  	<li><img src="./img/ico_night/evernote_gw.png"/></li>
+		  	<li><img src="./img/ico_night/music.png"/></li>
+		  	<li><img src="./img/ico_night/rss.png"/></li>
+		  	<li><img src="./img/ico_night/SMS.png"/></li>
+		  	<li><img src="./img/ico_night/Weather.png"/></li>
+		  	<li><img src="./img/ico_night/github.png"/></li>
+		  	<li><img src="./img/ico_night/Messageboards.png"/></li>
+		  	<li><img src="./img/ico_night/twitter_bwb.png"/></li>
+		  	<li><img src="./img/ico_night/cnbeta.png"/></li>
+		  	<li><img src="./img/ico_night/GMap.png"/></li>
+		  	<li><img src="./img/ico_night/Gplus.png"/></li>
+		  	<li><img src="./img/ico_night/youtube.png"/></li>
+		  	<li><img src="./img/ico_night/csdn.png"/></li>
+		  	<li><img src="./img/ico_night/skype.png"/></li>
+		  	<li><img src="./img/ico_night/summer.logo.png"/></li>
+		  </ul>
+		</div>
+       </div>
  
  
  
 	</div>
 	  <div class="row-fluid">
-		<div class="span10 offset1 navbar-fixed-bottom">
-		footer
+		<div class="navbar navbar span10">
+		  <div class="navbar-inner navbar-fixed-bottom">
+		    <ul class="nav offset1">
+		      <li class="active"><a href="#"><strong >Start</strong></a></li>
+		      <li><a href="#"><strong >Start</strong></a></li>
+		      <li><a href="#"><strong >Start</strong></a></li>
+		    </ul>
+		  </div>
 		</div>
+		<div class="span1"></div>
 	  </div>
+
+
+
  <script type="text/javascript">
  $(document).ready(function(){
  clickArrow();
@@ -265,7 +330,17 @@
  initMobAsideImg();
  getAction();
  getTagCloud();
+ initSkin();
+ 
  })
+  $(function() {
+		$( "#sortable" ).sortable();
+		$( "#sortable" ).disableSelection();
+	});
+    $(function() {
+		$( "#sortable2" ).sortable();
+		$( "#sortable2" ).disableSelection();
+	});
  </script>
  
 </body>

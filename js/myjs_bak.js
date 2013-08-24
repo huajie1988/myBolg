@@ -5,13 +5,13 @@
 
         2013/05/07  Ver0.01
 
-        1、添加下拉箭头动画功能
+        1¡¢Ìí¼ÓÏÂÀ­¼ýÍ·¶¯»­¹¦ÄÜ
 
-        2、修正当用mybtn或mystart其中一个打开下拉菜单，用另一个想关闭时
+        2¡¢ÐÞÕýµ±ÓÃmybtn»òmystartÆäÖÐÒ»¸ö´ò¿ªÏÂÀ­²Ëµ¥£¬ÓÃÁíÒ»¸öÏë¹Ø±ÕÊ±
 
-          需要按两次的问题。
+          ÐèÒª°´Á½´ÎµÄÎÊÌâ¡£
 
-        3、当打开菜单后如果单击其他地方，下拉菜单消失，但箭头方向未变
+        3¡¢µ±´ò¿ª²Ëµ¥ºóÈç¹ûµ¥»÷ÆäËûµØ·½£¬ÏÂÀ­²Ëµ¥ÏûÊ§£¬µ«¼ýÍ··½ÏòÎ´±ä
 
  
 
@@ -21,9 +21,9 @@
 
         2013/05/07 Ver0.02
 
-        1、修改算法为click。
+        1¡¢ÐÞ¸ÄËã·¨Îªclick¡£
 
-        2、问题3依旧存在
+        2¡¢ÎÊÌâ3ÒÀ¾É´æÔÚ
 
  
 
@@ -43,7 +43,7 @@
 
                     //alert(hasCls);
 
-                    //$('#mystart').addClass("open");//不需要添加，click事件会自动添加open类，如果手动添加反而会出错
+                    //$('#mystart').addClass("open");//²»ÐèÒªÌí¼Ó£¬clickÊÂ¼þ»á×Ô¶¯Ìí¼ÓopenÀà£¬Èç¹ûÊÖ¶¯Ìí¼Ó·´¶ø»á³ö´í
 
                    // $('#mybtn').removeClass("mybtn_up").addClass("mybtn_down");
 					$('#mybtn').removeClass("icon-upload").addClass("icon-download");
@@ -68,13 +68,17 @@
     }
 
     function changeAsideImg(){
-    	var myDate = new Date();
-		// alert(myDate.getHours());
-		if(myDate.getHours>=6&&myDate.getHours<=18)
-			changeAsideImgDay();
-		else
-			changeAsideImgNight();
-        
+        $('#myasideimg').toggle(function(){
+            $(this).attr("src","./img/aside2.png");
+            $('.navbar').addClass("navbar-inverse");
+			$('i').addClass("icon-white");
+			$('.myasidetitlebg').addClass("myasidetitlebg_rev");
+        },function(){
+            $(this).attr("src","./img/aside.png");
+            $('.navbar').removeClass("navbar-inverse");
+			$('i').removeClass("icon-white");
+			$('.myasidetitlebg').removeClass("myasidetitlebg_rev");
+        });
         $('#myasideimg').mousemove(function(){
             $(this).css("cursor","pointer");
         });
@@ -84,7 +88,7 @@
 			$('.myasidetitlebg').click(function(){
 			//	var sty=$(this).next().attr("style");
 			//	alert(sty);
-				var temp= $(this).next().is(":hidden");//是否隐藏 
+				var temp= $(this).next().is(":hidden");//ÊÇ·ñÒþ²Ø 
 				//alert(temp);
 				if(!temp){
 					$(this).next().hide(600).end();
@@ -117,7 +121,7 @@
 				//var tmp=$(".noAction a").attr("value");
 				//alert(tmp);
 				$.get(
-					'./ajax/search.php',
+					'search.php',
 					{key:$(this).children().attr("value"),
 					table:''
 					},
@@ -129,13 +133,13 @@
 
 		});
 	}
-
+	
 	function getTagCloud(){
 		$("#cloud").on("click","a",function(){
 				//var tmp=$(this).attr("value");
 				//alert(tmp);
 				$.get(
-					'./ajax/search.php',
+					'search.php',
 					{key:$(this).attr("value"),
 					table:"cloudtest"
 					},
@@ -145,64 +149,5 @@
 					}
 					);
 		});
-
-	}
-	function initSkin(){
-		var myDate = new Date();
-		// alert(myDate.getHours());
-		if(myDate.getHours>=6&&myDate.getHours<=18)
-		{
-			$("#sortable2").hide();
-			changeAsideImgCommonRmove();
-		}
-			
-		else
-		{
-			$("#sortable").hide();
-			changeAsideImgCommonAdd();
-		}
-			
-	}
-	function changeAsideImgDay(){
-		$('#myasideimg').toggle(function(){
-			changeAsideImgCommonAdd();
-			// $("#mycontainer").slideUp(500);
-			$("#sortable").hide(500);/*.slideUp(500).fadeOut(500)*/
-			// $("#mycontainer").slideDown(800);
-			$("#sortable2").show(500).fadeIn(500);
-        },function(){
-			changeAsideImgCommonRmove();
-			// $("#mycontainer").slideUp(500);
-			$("#sortable2").hide(500);/*.slideUp(500).fadeOut(500)*/
-			// $("#mycontainer").slideDown(800);
-			$("#sortable").show(500).fadeIn(500);
-        });
-	}
-	function changeAsideImgNight(){
-		$('#myasideimg').toggle(function(){
-               changeAsideImgCommonRmove();     	
-			// $("#mycontainer").slideUp(500);
-			$("#sortable2").hide(500);/*.slideUp(500).fadeOut(500)*/
-			// $("#mycontainer").slideDown(800);
-			$("#sortable").show(500).fadeIn(500);
-        },function(){
-        	changeAsideImgCommonAdd();
-			// $("#mycontainer").slideUp(500);
-			$("#sortable").hide(500);/*.slideUp(500).fadeOut(500)*/
-			// $("#mycontainer").slideDown(800);
-			$("#sortable2").show(500).fadeIn(500);
-
-        });
-	}
-	function changeAsideImgCommonAdd(){
-			$('#myasideimg').attr("src","./img/aside2.png");
-            $('.navbar').addClass("navbar-inverse");
-			$('i').addClass("icon-white");
-			$('.myasidetitlebg').addClass("myasidetitlebg_rev");
-	}
-	function changeAsideImgCommonRmove(){
-			$('#myasideimg').attr("src","./img/aside.png");
-            $('.navbar').removeClass("navbar-inverse");
-			$('i').removeClass("icon-white");
-			$('.myasidetitlebg').removeClass("myasidetitlebg_rev");
+		
 	}
