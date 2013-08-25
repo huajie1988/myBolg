@@ -149,10 +149,11 @@
 	}
 	function initSkin(){
 		var myDate = new Date();
-		// alert(myDate.getHours());
-		if(myDate.getHours>=6&&myDate.getHours<=18)
+		
+		if(myDate.getHours()>=6 && myDate.getHours()<=18)
 		{
 			$("#sortable2").hide();
+			// alert(myDate.getHours());
 			changeAsideImgCommonRmove();
 		}
 			
